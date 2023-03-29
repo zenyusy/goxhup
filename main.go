@@ -177,6 +177,17 @@ func imSel(idx int) bool {
 	return true
 }
 
+func bufBs() bool {
+	p, b := gbi.bsX()
+	if b {
+		termbox.SetChar(p, gbi.curY, ' ')
+		termbox.SetChar(p+1, gbi.curY, ' ')
+		return true
+	} else {
+		return false
+	}
+}
+
 func bufClear() bool {
 	if gbi.empty() {
 		return false
@@ -227,6 +238,8 @@ func handleCh(r rune) bool {
 		return imClear()
 	case '"':
 		return bufClear()
+	case '|':
+		return bufBs()
 	case ',':
 		return pgBack()
 	case '.':

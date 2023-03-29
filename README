@@ -4,3 +4,18 @@ words.go is just a demo
 rely heavily on TUI lib
 
 win resize unhandled
+
+---
+
+[a-z]{4}    im input
+backsapce   im backsapce
+'           im clear
+,           page back
+.           page forward
+?           show/hide code
+space       commit 1
+[1-9]       commit
+[A-W]       buffer select
+|           buffer backsapce
+"           buffer clear
+[]          exit

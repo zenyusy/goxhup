@@ -47,6 +47,17 @@ func (bi *bufInfo) useX() int {
 	return ret
 }
 
+func (bi *bufInfo) bsX() (int, bool) {
+	p := bi.x[bi.curY]
+	if p > 1+bufX0 { // >= bufX0+2 : non-empty
+		p -= 2
+		bi.x[bi.curY] = p
+		return p, true
+	} else {
+		return 0, false
+	}
+}
+
 func (bi *bufInfo) y2b(y int) rune {
 	return rune(y + bi.delta)
 }
